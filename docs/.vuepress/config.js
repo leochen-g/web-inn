@@ -22,7 +22,14 @@ module.exports = {
           title:'css基础',
           collapsable: true,
           children: [
-            '1','2','3'
+            'css-1','css-2','css-3'
+          ]
+        },
+        {
+          title:'javascript常见问题',
+          collapsable: true,
+          children: [
+            'js-1','js-2','js-3'
           ]
         },
       ],

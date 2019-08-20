@@ -2,7 +2,7 @@
 home: true
 heroImage: /img/home.jpg
 actionText: GO! →
-actionLink: /zh/guide/
+actionLink: /web/
 features:
 - title: 前端之路
   details: 汇集前端前沿技术，总结前端常见问题
