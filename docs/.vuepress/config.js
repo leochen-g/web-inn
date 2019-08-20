@@ -29,7 +29,7 @@ module.exports = {
           title:'javascript常见问题',
           collapsable: true,
           children: [
-            'js-1','js-2','js-3'
+            'js-1','js-2'
           ]
         },
       ],
