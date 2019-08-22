@@ -4,7 +4,7 @@ module.exports = {
   description: '全栈进阶之路',
   head: [
     ['link', { rel: 'icon', href: '/img/logo.ico' }],
-    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;' }],
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' }],
   ],
   themeConfig: {
     search: true,
@@ -26,10 +26,10 @@ module.exports = {
           ]
         },
         {
-          title:'javascript常见问题',
+          title:'js基础',
           collapsable: true,
           children: [
-            'js-1','js-2'
+            'js-1','js-2','js-3'
           ]
         },
       ],
