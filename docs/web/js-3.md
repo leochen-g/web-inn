@@ -147,3 +147,4 @@ console.log(test.__proto__.x === test.x);//true
 Child5.prototype = Object.create(Parent5.prototype);
 Child5.prototype.constructor = Child5;
 ```
+
