@@ -1,5 +1,5 @@
 module.exports = {
-  base:'',
+  base:'/web-inn/',
   title: '前端客栈',
   description: '全栈进阶之路',
   head: [
