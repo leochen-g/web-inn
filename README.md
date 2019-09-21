@@ -1,4 +1,4 @@
-# 前端客栈
+# 前端客栈 [![](https://www.travis-ci.org/gengchen528/web-inn.svg?branch=master)](https://www.travis-ci.org/gengchen528/web-inn)
 
 收集整理前端常见问题，整合前端资源
 
