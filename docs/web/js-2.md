@@ -3,7 +3,7 @@
 ## call,apply,bind的基本介绍
 ### 语法：
 
-``` 
+``` js
 fun.call(thisArg, param1, param2, ...)
 fun.apply(thisArg, [param1,param2,...])
 fun.bind(thisArg, param1, param2, ...)
@@ -70,7 +70,7 @@ param1,param2(可选): 传给fun的参数。
 1、判断数据类型：
 
 `Object.prototype.toString`用来判断类型再合适不过，借用它我们几乎可以判断所有类型的数据：
-```
+``` js
 function isType(data, type) {
     const typeObj = {
         '[object String]': 'string',
@@ -107,7 +107,7 @@ console.log(
 
 类数组因为不是真正的数组所有没有数组类型上自带的种种方法，所以我们需要去借用数组的方法。
 比如借用数组的push方法：
-```
+``` js
 var arrayLike = {
   0: 'OB',
   1: 'Koro1',
@@ -120,7 +120,7 @@ console.log(arrayLike) // {"0":"OB","1":"Koro1","2":"添加元素1","3":"添加�
 3、apply获取数组最大值最小值：
 
 apply直接传递数组做要调用方法的参数，也省一步展开数组，比如使用Math.max、Math.min来获取数组的最大值/最小值:
-```
+``` js
 const arr = [15, 6, 12, 13, 16];
 const max = Math.max.apply(Math, arr); // 16
 const min = Math.min.apply(Math, arr); // 6
@@ -128,7 +128,7 @@ const min = Math.min.apply(Math, arr); // 6
 4、继承
 
 ES5的继承也都是通过借用父类的构造方法来实现父类方法/属性的继承：
-```
+``` js
 // 父类
 function supFather(name) {
     this.name = name;
@@ -173,7 +173,7 @@ call,apply的效果完全一样，它们的区别也在于
 参数集合已经是一个数组的情况，用apply，比如上文的获取数组最大值/最小值。
 
 参数数量/顺序不确定的话就用apply，比如以下示例：
-```
+``` js
 const obj = {
     age: 24,
     name: 'OBKoro1',
@@ -203,7 +203,7 @@ function handle(...params) {
 ### 保存函数参数
 
 首先来看下一道经典的面试题：
-```
+``` js
 for (var i = 1; i <= 5; i++) {
    setTimeout(function test() {
         console.log(i) // 依次输出：6 6 6 6 6
@@ -219,7 +219,7 @@ for (var i = 1; i <= 5; i++) {
 方法有很多：
 
 1、闭包, 保存变量
-```
+``` js
 for (var i = 1; i <= 5; i++) {
     (function (i) {
         setTimeout(function () {
@@ -231,7 +231,7 @@ for (var i = 1; i <= 5; i++) {
 在这里创建了一个闭包，每次循环都会把i的最新值传进去，然后被闭包保存起来。
 
 2、bind
-```
+``` js
 for (var i = 1; i <= 5; i++) {
     // 缓存参数
     setTimeout(function (i) {
@@ -253,7 +253,7 @@ for (var i = 1; i <= 5; i++) {
 
 这是一个常见的问题，下面是我在开发VSCode插件处理webview通信时，遇到的真实问题，一开始以为VSCode的API哪里出问题，调试了一番才发现是this指向丢失的问题。
 
-```
+``` js
 class Page {
     constructor(callBack) {
         this.className = 'Page'
@@ -279,14 +279,14 @@ new PageA()
 
 问题出在传递回调函数的时候：
 
-```
+``` js
 this.pageClass = new Page(this.handleMessage)
 ```
 
 因为传递过去的this.handleMessage是一个函数内存地址，没有上下文对象，也就是说该函数没有绑定它的this指向。
 
 那它的this指向于它所应用的绑定规则：
-```
+``` js
 class Page {
     constructor(callBack) {
         this.className = 'Page'
@@ -303,7 +303,7 @@ class Page {
 bind绑定回调函数的this指向：
 
 这是典型bind的应用场景, 绑定this指向，用做回调函数。
-```
+``` js
 this.pageClass = new Page(this.handleMessage.bind(this)) // 绑定回调函数的this指向
 ```
 ***PS： 这也是为什么react的render函数在绑定回调函数的时候，也要使用bind绑定一下this的指向，也是因为同样的问题以及原理。***
@@ -314,7 +314,7 @@ this.pageClass = new Page(this.handleMessage.bind(this)) // 绑定回调函数�
 
 这块内容，可以看下我之前写的博客：详解箭头函数和普通函数的区别以及[《箭头函数的注意事项、不适用场景》](https://juejin.im/post/5c76972af265da2dc4538b64#heading-3)
 
-```
+``` js
 this.pageClass = new Page(() => this.handleMessage()) // 箭头函数绑定this指向
 ```
 
@@ -333,7 +333,7 @@ this.pageClass = new Page(() => this.handleMessage()) // 箭头函数绑定this�
 3. 通过隐式绑定执行函数并传递参数。
 4. 删除临时属性，返回函数执行结果
 
-```
+``` js
 Function.prototype.myCall = function (context, ...arr) {
     if (context === null || context === undefined) {
        // 指定为 null 和 undefined 的 this 值会自动指向全局对象(浏览器中为window)
@@ -352,7 +352,7 @@ Function.prototype.myCall = function (context, ...arr) {
 #### 判断函数的上下文对象
 很多人判断函数上下文对象，只是简单的以`context`是否为false来判断,比如：
 
-```
+``` js
 // 判断函数上下文绑定到`window`不够严谨
 context = context ? Object(context) : window; 
 context = context || window; 
@@ -373,7 +373,7 @@ handle.elseCall(false) // window
 ![](./img/js2-1.png)
 所以正确的解决方案，应该是像我上面那么做：
 
-```
+``` js
 // 正确判断函数上下文对象
     if (context === null || context === undefined) {
        // 指定为 null 和 undefined 的 this 值会自动指向全局对象(浏览器中为window)
@@ -393,7 +393,7 @@ handle.elseCall(false) // window
 
 1. 传递给函数的参数处理，不太一样，其他部分跟call一样。
 2. apply接受第二个参数为类数组对象, 这里用了JavaScript权威指南中判断是否为类数组对象的方法。
-```
+``` js
 Function.prototype.myApply = function (context) {
     if (context === null || context === undefined) {
         context = window // 指定为 null 和 undefined 的 this 值会自动指向全局对象(浏览器中为window)
@@ -448,7 +448,7 @@ Function.prototype.myApply = function (context) {
     * new调用判断：通过instanceof判断函数是否通过new调用，来决定绑定的context
     * 绑定this+传递参数
     * 返回源函数的执行结果
-```
+``` js
 Function.prototype.myBind = function (objThis, ...params) {
     const thisFn = this; // 存储源函数以及上方的params(函数参数)
     // 对返回的函数 secondParams 二次传参

@@ -7,7 +7,7 @@
 构造函数模式的目的就是为了创建一个自定义类，并且创建这个类的实例。构造函数模式中拥有了类和实例的概念，并且实例和实例之间是相互独立的，即实例识别。
 构造函数就是一个普通的函数，创建方式和普通函数没有区别，不同的是构造函数习惯上首字母大写。另外就是调用方式的不同，普通函数是直接调用，而构造函数需要使用new关键字来调用。
 
-```
+``` js
     function Person(name, age, gender) {
         this.name = name
         this.age = age
@@ -42,7 +42,7 @@
 ### 1.__proto__和constructor
 
 每一个对象数据类型(普通的对象、实例、`prototype`......)也天生自带一个属性__proto__，属性值是当前实例所属类的原型(`prototype`)。原型对象中有一个属性`constructor`, 它指向函数对象。
-```
+``` js
     function Person() {}
     var person = new Person()
     console.log(person.__proto__ === Person.prototype)//true
@@ -61,7 +61,7 @@
 
 我们可以使用对象的`hasOwnProperty()`来检查对象自身中是否含有该属性；使用in检查对象中是否含有某个属性时，如果对象中没有但是原型中有，也会返回true
 
-```
+``` js
     function Person() {}
     Person.prototype.a = 123;
     Person.prototype.sayHello = function () {
@@ -77,7 +77,7 @@ person实例中没有a这个属性，从 person 对象中找不到 a 属性就�
 
 当读取实例的属性时，如果找不到，就会查找与对象关联的原型中的属性，如果还查不到，就去找原型的原型，一直找到最顶层Object为止。Object是JS中所有对象数据类型的基类(最顶层的类)在`Object.prototype`上没有`__proto__`这个属性。
 
-```
+``` js
 console.log(Object.prototype.__proto__ === null) // true
 ```
 ![](./img/js1-4.png)

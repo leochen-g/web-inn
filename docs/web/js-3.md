@@ -2,7 +2,7 @@
 
 ## 借助构造函数实现继承
 
-```
+``` js
 function Parent1() {
    this.name = 'parent1';
  }
@@ -24,7 +24,7 @@ function Parent1() {
 
 ## 借助原型链实现继承
 
-```
+``` js
 /**
  * 借助原型链实现继承
  */
@@ -51,7 +51,7 @@ var s2 = new Child2();
 `Child2.prototype = new Parent2(); <=> Child2.prototype.__proto__ = Parent2.prototype; `这样我们借助`new`这个语法糖，就可以实现原型链继承。但这里有个总是，如打印结果，我们给`s1.play`新增一个值 ，`s2` 也跟着改了。所以这个是原型链继承的缺点，原因是 `s1.__pro__ `和` s2.__pro__`指向同一个地址即 父类的`prototype`。
 
 ## 组合方式实现继承
-```
+``` js
 /**
  * 组合方式
  */
@@ -82,7 +82,7 @@ console.log(s3.play, s4.play)
 
 ## 组合继承的优化1
 
-```
+``` js
 function Parent4() {
   this.name = 'parent4';
   this.play = [1, 2, 3];
@@ -99,7 +99,7 @@ Child4.prototype = Parent4.prototype;
 
 var s5 = new Child4();
 var s6 = new Child4();
-```
+``` 
 这边主要为 Child4.prototype = Parent4.prototype， 因为我们通过构造函数就可以拿到所有属性和实例的方法，那么现在我想继承父类的原型对象，所以你直接赋值给我就行，不用在去 new 一次父类。其实这种方法还是有问题的，如果我在控制台打印以下两句:
 
 ![](./img/js3-4.png)
@@ -112,7 +112,7 @@ var s6 = new Child4();
 
 ## 组合继承的优化2
 
-```
+``` js
 /**
  * 组合继承的优化2
  */
@@ -133,7 +133,7 @@ Child5.prototype = Object.create(Parent5.prototype);
 ```
 这里主要使用`Object.create()`，它的作用是将对象继承到`__proto__`属性上。举个例子：
 
-```
+``` js
 var test = Object.create({x:123,y:345});
 console.log(test);//{}
 console.log(test.x);//123
@@ -143,7 +143,7 @@ console.log(test.__proto__.x === test.x);//true
 
 那大家可能说这样解决了吗，其实没有解决,因为这时 Child5.prototype 还是没有自己的 constructor,它要找的话还是向自己的原型对象上找最后还是找到  Parent5.prototype, constructor还是 Parent5 ,所以要给 Child5.prototype 写自己的 constructor:
 
-```
+``` js
 Child5.prototype = Object.create(Parent5.prototype);
 Child5.prototype.constructor = Child5;
 ```
