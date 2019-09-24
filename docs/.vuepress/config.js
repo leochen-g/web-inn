@@ -1,7 +1,8 @@
 module.exports = {
   base: "/web-inn/",
-  title: "前端客栈",
-  description: "全栈进阶之路",
+  title: "雷欧的前端客栈",
+  description: "前端客栈，带你走进全栈进阶之路",
+  ga:'UA-101688512-1',
   head: [
     ["link", { rel: "icon", href: "/img/logo.ico" }],
     [
