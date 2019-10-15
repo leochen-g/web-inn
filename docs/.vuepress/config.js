@@ -2,7 +2,14 @@ module.exports = {
   base: "/web-inn/",
   title: "雷欧的前端客栈",
   description: "前端客栈，带你走进全栈进阶之路",
-  ga:'UA-101688512-1',
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-101688512-1'
+      }
+    ]
+  ],
   head: [
     ["link", { rel: "icon", href: "/img/logo.ico" }],
     [
@@ -31,7 +38,7 @@ module.exports = {
     ],
     nav: [
       { text: "首页", link: "/" },
-      // { text: "博文", link: "/blog/" },
+      { text: "博文", link: "/blog/" },
       { text: "前端", link: "/web/" },
       { text: "Node", link: "/node/" },
       { text: "微信每日说", link: "/wechatBot/" },
@@ -61,7 +68,7 @@ module.exports = {
         {
           title: "前端",
           collapsable: true,
-          children: ["blog-1"]
+          children: ["blog-1","blog-2"]
         }
       ]
     },
