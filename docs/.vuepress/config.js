@@ -1,7 +1,7 @@
 module.exports = {
   base: "/web-inn/",
   title: "雷欧的前端客栈",
-  description: "前端客栈，带你走进全栈进阶之路",
+  description: "前端客栈,带你走进全栈进阶之路,vue学习,react学习,Node,最新的全栈学习资源",
   plugins: [
     [
       '@vuepress/google-analytics',
@@ -17,7 +17,15 @@ module.exports = {
       {
         name: "viewport",
         content:
-          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+            "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      }
+    ]
+    [
+      "meta",
+      {
+        name: "keywords",
+        content:
+          "前端客栈,小K博客,小k博客,前端,Node,Vue,React,2020最新前端资讯,2020前端技术合集,2020前端"
       }
     ]
   ],
@@ -69,6 +77,11 @@ module.exports = {
           title: "前端",
           collapsable: true,
           children: ["blog-1","blog-2","blog-6"]
+        },
+        {
+          title: "服务器",
+          collapsable: true,
+          children: ["blog-7"]
         }
       ]
     },
