@@ -25,7 +25,7 @@ module.exports = {
       {
         name: "keywords",
         content:
-          "前端客栈,小K博客,小k博客,前端,Node,Vue,React,2020最新前端资讯,2020前端技术合集,2020前端"
+          "前端客栈,小K博客,小k博客,前端,Node,Vue,React,2020最新前端资讯,2020前端技术合集,2020前端,Vue SSR"
       }
     ]
   ],
