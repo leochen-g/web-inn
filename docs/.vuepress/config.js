@@ -81,7 +81,7 @@ module.exports = {
         {
           title: "服务器",
           collapsable: true,
-          children: ["blog-7"]
+          children: ["blog-7","blog-8"]
         }
       ]
     },
