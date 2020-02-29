@@ -50,6 +50,7 @@ module.exports = {
       { text: "前端", link: "/web/" },
       { text: "Node", link: "/node/" },
       { text: "微信每日说", link: "/wechatBot/" },
+      { text: "智能微秘书", link: "/secretary/" },
       { text: "Github", link: "https://github.com/gengchen528/" }
     ],
     sidebar: {
@@ -82,6 +83,13 @@ module.exports = {
           title: "服务器",
           collapsable: true,
           children: ["blog-7","blog-8"]
+        }
+      ],
+      "/secretary/": [
+        {
+          title: "简介",
+          collapse: true,
+          children: [],
         }
       ]
     },
