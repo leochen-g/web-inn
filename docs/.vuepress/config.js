@@ -87,9 +87,14 @@ module.exports = {
       ],
       "/secretary/": [
         {
-          title: "简介",
+          title: "智能微秘书",
           collapse: true,
           children: ['description', 'wechat', 'material', 'client'],
+        },
+        {
+          title: "智能微秘书（客户端）",
+          collapse: true,
+          children: ['client'],
         }
       ]
     },
