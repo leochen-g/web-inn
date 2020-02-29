@@ -89,7 +89,7 @@ module.exports = {
         {
           title: "智能微秘书",
           collapse: true,
-          children: ['description', 'wechat', 'material', 'client'],
+          children: ['description', 'wechat', 'material'],
         },
         {
           title: "智能微秘书（客户端）",
