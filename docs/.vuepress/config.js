@@ -89,7 +89,7 @@ module.exports = {
         {
           title: "简介",
           collapse: true,
-          children: [],
+          children: ['description', 'wechat', 'material', 'client'],
         }
       ]
     },
