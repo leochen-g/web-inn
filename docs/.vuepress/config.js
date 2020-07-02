@@ -25,7 +25,7 @@ module.exports = {
       {
         name: "keywords",
         content:
-          "前端客栈,小K博客,小k博客,前端,Node,Vue,React,2020最新前端资讯,2020前端技术合集,2020前端,Vue SSR"
+          "前端客栈,小K博客,小k博客,前端,Node,Vue,React,2020最新前端资讯,2020前端技术合集,2020前端,Vue SSR,Nuxt,Nuxtjs"
       }
     ]
   ],
@@ -77,7 +77,12 @@ module.exports = {
         {
           title: "前端",
           collapsable: true,
-          children: ["blog-1","blog-2","blog-6","blog-9"]
+          children: ["blog-2","blog-6","blog-9"]
+        },
+        {
+          title: "Vue",
+          collapsable: true,
+          children: ["blog-1"]
         },
         {
           title: "服务器",
