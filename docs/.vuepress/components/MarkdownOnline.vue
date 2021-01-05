@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import Vue from 'Vue';
 export default {
   name: 'MarkdownOnline',
   data() {
