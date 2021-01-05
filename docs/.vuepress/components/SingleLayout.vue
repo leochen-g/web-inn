@@ -116,6 +116,6 @@ export default {
 </script>
 <style>
 .single-page {
-  padding-left: 0;
+  padding-left: 0 !important;
 }
 </style>
