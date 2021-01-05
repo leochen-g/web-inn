@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>瀑布流插件Masonry中文文档【翻译】 | 雷欧的前端客栈</title>
+    <meta name="description" content="前端客栈,带你走进全栈进阶之路,vue学习,react学习,Node,最新的全栈学习资源">
+    <link rel="icon" href="/web-inn/img/logo.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="keywords" content="前端客栈,小K博客,小k博客,前端,Node,Vue,React,2020最新前端资讯,2020前端技术合集,2020前端,Vue SSR,Nuxt,Nuxtjs">
+    
+    <link rel="preload" href="/web-inn/assets/css/0.styles.9314e462.css" as="style"><link rel="preload" href="/web-inn/assets/js/app.c8204003.js" as="script"><link rel="preload" href="/web-inn/assets/js/3.b3decb7d.js" as="script"><link rel="preload" href="/web-inn/assets/js/1.b7f29f9d.js" as="script"><link rel="preload" href="/web-inn/assets/js/22.58360267.js" as="script"><link rel="prefetch" href="/web-inn/assets/js/10.12ba8c85.js"><link rel="prefetch" href="/web-inn/assets/js/11.165310ea.js"><link rel="prefetch" href="/web-inn/assets/js/12.fd81af58.js"><link rel="prefetch" href="/web-inn/assets/js/13.56ba4f79.js"><link rel="prefetch" href="/web-inn/assets/js/14.9be3cf6f.js"><link rel="prefetch" href="/web-inn/assets/js/15.4cc17da9.js"><link rel="prefetch" href="/web-inn/assets/js/16.952fd54e.js"><link rel="prefetch" href="/web-inn/assets/js/17.1f589473.js"><link rel="prefetch" href="/web-inn/assets/js/18.94c71827.js"><link rel="prefetch" href="/web-inn/assets/js/19.55903c09.js"><link rel="prefetch" href="/web-inn/assets/js/20.e9d1790a.js"><link rel="prefetch" href="/web-inn/assets/js/21.49651b25.js"><link rel="prefetch" href="/web-inn/assets/js/23.a0f0915f.js"><link rel="prefetch" href="/web-inn/assets/js/24.d6f3814d.js"><link rel="prefetch" href="/web-inn/assets/js/25.86dc3da2.js"><link rel="prefetch" href="/web-inn/assets/js/26.9db65791.js"><link rel="prefetch" href="/web-inn/assets/js/27.042044cb.js"><link rel="prefetch" href="/web-inn/assets/js/28.85052dbf.js"><link rel="prefetch" href="/web-inn/assets/js/29.65b0f585.js"><link rel="prefetch" href="/web-inn/assets/js/30.f34e8200.js"><link rel="prefetch" href="/web-inn/assets/js/31.ec8a93d6.js"><link rel="prefetch" href="/web-inn/assets/js/32.e265c1bd.js"><link rel="prefetch" href="/web-inn/assets/js/33.f3ec6091.js"><link rel="prefetch" href="/web-inn/assets/js/34.7498928f.js"><link rel="prefetch" href="/web-inn/assets/js/35.91910561.js"><link rel="prefetch" href="/web-inn/assets/js/36.6171fdcd.js"><link rel="prefetch" href="/web-inn/assets/js/37.c6a8de37.js"><link rel="prefetch" href="/web-inn/assets/js/38.3973d704.js"><link rel="prefetch" href="/web-inn/assets/js/39.53b952a8.js"><link rel="prefetch" href="/web-inn/assets/js/4.a1635905.js"><link rel="prefetch" href="/web-inn/assets/js/5.591eb380.js"><link rel="prefetch" href="/web-inn/assets/js/6.072d5ff6.js"><link rel="prefetch" href="/web-inn/assets/js/7.bae679da.js"><link rel="prefetch" href="/web-inn/assets/js/8.1ced2cff.js"><link rel="prefetch" href="/web-inn/assets/js/9.b26abebe.js">
+    <link rel="stylesheet" href="/web-inn/assets/css/0.styles.9314e462.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-inn/" class="home-link router-link-active"><!----> <span class="site-name">雷欧的前端客栈</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/web-inn/" class="nav-link">首页</a></div><div class="nav-item"><a href="/web-inn/blog/" class="nav-link router-link-active">博文</a></div><div class="nav-item"><a href="/web-inn/web/" class="nav-link">前端</a></div><div class="nav-item"><a href="/web-inn/node/" class="nav-link">Node</a></div><div class="nav-item"><a href="/web-inn/onlineTool/markdown-online.html" class="nav-link">Markdown在线编辑器</a></div><div class="nav-item"><a href="/web-inn/wechatBot/" class="nav-link">微信每日说</a></div><div class="nav-item"><a href="/web-inn/secretary/" class="nav-link">智能微秘书</a></div><div class="nav-item"><a href="https://github.com/gengchen528/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/web-inn/" class="nav-link">首页</a></div><div class="nav-item"><a href="/web-inn/blog/" class="nav-link router-link-active">博文</a></div><div class="nav-item"><a href="/web-inn/web/" class="nav-link">前端</a></div><div class="nav-item"><a href="/web-inn/node/" class="nav-link">Node</a></div><div class="nav-item"><a href="/web-inn/onlineTool/markdown-online.html" class="nav-link">Markdown在线编辑器</a></div><div class="nav-item"><a href="/web-inn/wechatBot/" class="nav-link">微信每日说</a></div><div class="nav-item"><a href="/web-inn/secretary/" class="nav-link">智能微秘书</a></div><div class="nav-item"><a href="https://github.com/gengchen528/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web-inn/blog/blog-2.html" class="sidebar-link">在 CentOS 7 上安装最新版 Nginx</a></li><li><a href="/web-inn/blog/blog-6.html" class="sidebar-link">在Nuxt中动态加载vuex模块的踩雷日志</a></li><li><a href="/web-inn/blog/blog-9.html" class="active sidebar-link">瀑布流插件Masonry中文文档【翻译】</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#安装install" class="sidebar-link">安装Install</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#下载" class="sidebar-link">下载</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#cdn" class="sidebar-link">CDN</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#包管理" class="sidebar-link">包管理</a></li></ul></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#入门getting-started" class="sidebar-link">入门Getting started</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#html" class="sidebar-link">HTML</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#css" class="sidebar-link">CSS</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#通过jquery初始化" class="sidebar-link">通过jQuery初始化</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#通过原生javascript初始化" class="sidebar-link">通过原生JavaScript初始化</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#在html中初始化" class="sidebar-link">在HTML中初始化</a></li></ul></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#布局layout" class="sidebar-link">布局Layout</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#组件尺寸" class="sidebar-link">组件尺寸</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#响应式布局" class="sidebar-link">响应式布局</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#imagesloaded" class="sidebar-link">imagesLoaded</a></li></ul></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#配置项options" class="sidebar-link">配置项Options</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#必选配置项recommended" class="sidebar-link">必选配置项Recommended</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#布局layout-2" class="sidebar-link">布局Layout</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#设置（setup）" class="sidebar-link">设置（Setup）</a></li></ul></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#方法（methods）" class="sidebar-link">方法（Methods）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#布局（layout）" class="sidebar-link">布局（Layout）</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#增加-移除控件" class="sidebar-link">增加&amp;移除控件</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#事件（events）" class="sidebar-link">事件（Events）</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#utilities" class="sidebar-link">Utilities</a></li></ul></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#事件" class="sidebar-link">事件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#事件绑定（event-binding）" class="sidebar-link">事件绑定（event binding）</a></li><li class="sidebar-sub-header"><a href="/web-inn/blog/blog-9.html#masonry-事件" class="sidebar-link">Masonry 事件</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>服务器</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="瀑布流插件masonry中文文档【翻译】"><a href="#瀑布流插件masonry中文文档【翻译】" aria-hidden="true" class="header-anchor">#</a> 瀑布流插件Masonry中文文档【翻译】</h1> <blockquote><p>转自：<a href="https://segmentfault.com/a/1190000013675077" target="_blank" rel="noopener noreferrer">https://segmentfault.com/a/1190000013675077<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <h2 id="安装install"><a href="#安装install" aria-hidden="true" class="header-anchor">#</a> 安装Install</h2> <h3 id="下载"><a href="#下载" aria-hidden="true" class="header-anchor">#</a> 下载</h3> <p>下载压缩或未压缩的masonry</p> <ul><li>masonry.pkgd.min.js （压缩）</li> <li>masonry.pkgd.js （未压缩）</li></ul> <h3 id="cdn"><a href="#cdn" aria-hidden="true" class="header-anchor">#</a> CDN</h3> <p>在unpkg直接饮用Masonry文件。</p> <pre><code>&lt;script src=&quot;https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- or --&gt;
+&lt;script src=&quot;https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js&quot;&gt;&lt;/script&gt;
+</code></pre> <h3 id="包管理"><a href="#包管理" aria-hidden="true" class="header-anchor">#</a> 包管理</h3> <p>使用Bower安装</p> <pre><code>bower install masonry --save
+</code></pre> <p>使用npm安装</p> <pre><code>npm install masonry-layout
+</code></pre> <h2 id="入门getting-started"><a href="#入门getting-started" aria-hidden="true" class="header-anchor">#</a> 入门Getting started</h2> <h3 id="html"><a href="#html" aria-hidden="true" class="header-anchor">#</a> HTML</h3> <p>在你的项目中引入Masonry.js</p> <pre><code>&lt;script src=&quot;/path/to/masonry.pkgd.min.js&quot;&gt;&lt;/script&gt;
+</code></pre> <p>Masonry的运行需要一个包含一些列子组件的grid容器标签</p> <pre><code>&lt;div class=&quot;grid&quot;&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;grid-item grid-item--width2&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;...&lt;/div&gt;
+  ...
+&lt;/div&gt;
+</code></pre> <h3 id="css"><a href="#css" aria-hidden="true" class="header-anchor">#</a> CSS</h3> <p>你可以通过CSS控制所有组件的尺寸</p> <pre><code>.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
+</code></pre> <h3 id="通过jquery初始化"><a href="#通过jquery初始化" aria-hidden="true" class="header-anchor">#</a> 通过jQuery初始化</h3> <p>你可以将Masonry作为一个jQuery插件来使用<code>$('selector').masonry()</code></p> <pre><code>$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+</code></pre> <h3 id="通过原生javascript初始化"><a href="#通过原生javascript初始化" aria-hidden="true" class="header-anchor">#</a> 通过原生JavaScript初始化</h3> <p>你可以通过原生JS使用Masonry：<code>new Masonry( elem, options )</code>。构造函数<code>Masonry()</code>接收两个参数：容器标签和配置对象。</p> <pre><code>var elem = document.querySelector('.grid');
+var msnry = new Masonry( elem, {
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+// element argument can be a selector string
+//   for an individual element
+var msnry = new Masonry( '.grid', {
+  // options
+});
+</code></pre> <h3 id="在html中初始化"><a href="#在html中初始化" aria-hidden="true" class="header-anchor">#</a> 在HTML中初始化</h3> <p>你也可以在HTML中初始化Masonry，这样不需要书写任何JavaScript。在容器标签中增加<code>data-masonry</code>属性，其值则是Masonry组件的配置</p> <pre><code>&lt;div class=&quot;grid&quot; data-masonry='{ &quot;itemSelector&quot;: &quot;.grid-item&quot;, &quot;columnWidth&quot;: 200 }'&gt;
+</code></pre> <p><em>注意：在HTML中必须以JSON格式配置，key必须带引号，例如：<code>&quot;itemSelector&quot;:</code>。 <code>data-masonry</code>的值使用单引号，JSON使用双引号。</em><br>
+在Masonry v3版本，HTML初始化需要使用特定的class： <code>js-masonry</code> ，设置配置需要属性<code>data-masonry-options</code>，在Masonry v4之后版本中，这种写法也是兼容的。</p> <pre><code>&lt;div class=&quot;grid js-masonry&quot;
+  data-masonry-options='{ &quot;itemSelector&quot;: &quot;.grid-item&quot;, &quot;columnWidth&quot;: 200 }'&gt;
+</code></pre> <h2 id="布局layout"><a href="#布局layout" aria-hidden="true" class="header-anchor">#</a> 布局Layout</h2> <h3 id="组件尺寸"><a href="#组件尺寸" aria-hidden="true" class="header-anchor">#</a> 组件尺寸</h3> <p>你可以通过CSS控制组件的尺寸</p> <pre><code>div class=&quot;grid&quot;&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item grid-item--width2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item grid-item--height2&quot;&gt;&lt;/div&gt;
+  ...
+&lt;/div&gt;
+
+.grid-item {
+  float: left;
+  width: 80px;
+  height: 60px;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+}
+
+.grid-item--width2 { width: 160px; }
+.grid-item--height2 { height: 140px; }
+</code></pre> <h3 id="响应式布局"><a href="#响应式布局" aria-hidden="true" class="header-anchor">#</a> 响应式布局</h3> <p>组件的尺寸可设置成百分比从而适应响应式的布局，在设置masonry布局模式时，将<code>columnWidth</code>设置为指定组件的尺寸，设置<code>percentPosition: true</code> 。组件的位置将不再改变，window改变大小事，组件将以百分比的形式响应式布局。</p> <pre><code>&lt;div class=&quot;grid&quot;&gt;
+  &lt;!-- width of .grid-sizer used for columnWidth --&gt;
+  &lt;div class=&quot;grid-sizer&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item grid-item--width2&quot;&gt;&lt;/div&gt;
+  ...
+&lt;/div&gt;
+
+/* fluid 5 columns */
+.grid-sizer,
+.grid-item { width: 20%; }
+/* 2 columns */
+.grid-item--width2 { width: 40%; }
+
+$('.grid').masonry({
+  // set itemSelector so .grid-sizer is not used in layout
+  itemSelector: '.grid-item',
+  // use element for option
+  columnWidth: '.grid-sizer',
+  percentPosition: true
+})
+</code></pre> <h3 id="imagesloaded"><a href="#imagesloaded" aria-hidden="true" class="header-anchor">#</a> imagesLoaded</h3> <p>Masonry排列未加载完成的图片时会导致元素的重叠，imagesLoaded可以解决这个问题。imagesLoaded是一个独立的脚本插件，你可以在imagesloaded.desandro.com下载。<br>
+初始化Masonry，在每一张图片加载完成后触发布局。</p> <pre><code>// init Masonry
+var $grid = $('.grid').masonry({
+  // options...
+});
+// layout Masonry after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry('layout');
+});
+</code></pre> <p>或者在所有图片都加载完成后初始化Masonry</p> <pre><code>var $grid = $('.grid').imagesLoaded( function() {
+  // init Masonry after all images have loaded
+  $grid.masonry({
+    // options...
+  });
+});
+</code></pre> <h2 id="配置项options"><a href="#配置项options" aria-hidden="true" class="header-anchor">#</a> 配置项Options</h2> <p>除了<code>columnWidth</code>和<code>itemSelector</code>以外，所有的配置项都是可以选择的。</p> <pre><code>// jQuery
+$('.grid').masonry({
+  columnWidth: 200,
+  itemSelector: '.grid-item'
+});
+
+// vanilla JS （原生JS）
+var msnry = new Masonry( '.grid', {
+  columnWidth: 200,
+  itemSelector: '.grid-item'
+});
+
+&lt;!-- in HTML --&gt;
+&lt;div class=&quot;grid&quot; data-masonry='{ &quot;columnWidth&quot;: 200, &quot;itemSelector&quot;: &quot;.grid-item&quot; }'&gt;
+</code></pre> <h3 id="必选配置项recommended"><a href="#必选配置项recommended" aria-hidden="true" class="header-anchor">#</a> 必选配置项Recommended</h3> <p><strong>itemSelector</strong><br>
+用于指定参与布局的子组件。<br>
+我们建议始终设置项，用于区分参组件元素是否参与布局。</p> <pre><code>itemSelector: '.grid-item'
+
+&lt;div class=&quot;grid&quot;&gt;
+  &lt;!-- do not use banner in Masonry layout --&gt;
+  &lt;!—在Masonry布局时忽略 banner
+  &lt;div class=&quot;static-banner&quot;&gt;Static banner&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  ...
+&lt;/div&gt;
+</code></pre> <p><strong>columnWidth</strong><br>
+用于在水平网格上对齐组件</p> <p><em>我们建议设置columnWidth，如果没有设置columnWidth，Masonry将使用第一个组件的外宽作为默认值。</em></p> <pre><code>columnWidth: 80
+</code></pre> <p>使用组件尺寸，在响应式布局中奖组件的宽度设置成百分比，设置<code>columnWidth</code>时，将值设置为指定组件选择器的字符串，即使用该组件的外宽。</p> <pre><code>div class=&quot;grid&quot;&gt;
+  &lt;!-- .grid-sizer empty element, only used for element sizing --&gt;
+  &lt;div class=&quot;grid-sizer&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item grid-item--width2&quot;&gt;&lt;/div&gt;
+  ...
+&lt;/div&gt;
+
+/* fluid 5 columns */
+.grid-sizer,
+.grid-item { width: 20%; }
+/* 2 columns wide */
+.grid-item--width2 { width: 40%; }
+
+// use outer width of grid-sizer for columnWidth
+columnWidth: '.grid-sizer',
+itemSelector: '.grid-item',
+percentPosition: true
+</code></pre> <h3 id="布局layout-2"><a href="#布局layout-2" aria-hidden="true" class="header-anchor">#</a> 布局Layout</h3> <p><strong>组件尺寸Element sizing</strong><br>
+尺寸配置项<code>columnWidth</code>和<code>gutter</code>可以可以设置组件的列宽和间距。</p> <pre><code>&lt;div class=&quot;grid&quot;&gt;
+  &lt;!-- .grid-sizer empty element, only used for element sizing --&gt;
+  &lt;div class=&quot;grid-sizer&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item grid-item--width2&quot;&gt;&lt;/div&gt;
+  ...
+&lt;/div&gt;
+
+/* fluid 5 columns */
+.grid-sizer,
+.grid-item { width: 20%; }
+/* 2 columns wide */
+.grid-item--width2 { width: 40%; }
+
+// use outer width of grid-sizer for columnWidth
+columnWidth: '.grid-sizer',
+// do not use .grid-sizer in layout
+itemSelector: '.grid-item',
+percentPosition: true
+</code></pre> <p>该配置项可以设置为一个选择器的字符串或一个元素</p> <pre><code>// set to a selector string
+// first matching element within container element will be used
+columnWidth: '.grid-sizer'
+
+// set to an element
+columnWidth: $grid.find('.grid-sizer')[0]
+</code></pre> <p>组件尺寸允许你使用CSS控制Masonry的布局。这在响应式布局和媒体查询中非常有用。</p> <pre><code>/* 3 columns by default */
+.grid-sizer { width: 33.333%; }
+
+@media screen and (min-width: 768px) {
+  /* 5 columns for larger screens */
+  .grid-sizer { width: 20%; }
+}
+</code></pre> <p><strong>Gutter（间距）</strong></p> <pre><code>    gutter: 10
+</code></pre> <p>在js配置项gutter可以设置组件的横向间距，使用CSS margin可设置组件的纵向间距。</p> <pre><code>gutter: 10
+</code></pre> <p>css:</p> <pre><code>.grid-item {
+  margin-bottom: 10px;
+}
+</code></pre> <p>在响应式布局中使用组件尺寸将宽度设置为百分比时，可以将gutter的值设置为选择器字符串或者一个元素。</p> <pre><code>&lt;div class=&quot;grid&quot;&gt;
+  &lt;div class=&quot;grid-sizer&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;gutter-sizer&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item grid-item--width2&quot;&gt;&lt;/div&gt;
+  ...
+&lt;/div&gt;
+
+.grid-sizer,
+.grid-item { width: 22%; }
+.gutter-sizer { width: 4%; }
+.grid-item--width2 { width: 48%; }
+
+columnWidth: '.grid-sizer',
+gutter: '.gutter-sizer',
+itemSelector: '.grid-item',
+percentPosition: true
+</code></pre> <p><strong>horizontalOrder</strong><br>
+使组件按照从左到右排列。（对比组件们在第二排的排列）</p> <pre><code>horizontalOrder: true
+</code></pre> <p><img src="/img/bV5wjf/view" alt="clipboard.png" title="clipboard.png"><br> <img src="/img/bV5wjg/view" alt="clipboard.png" title="clipboard.png"></p> <p><strong>percentPosition</strong><br>
+设置组件的位置（尺寸）为百分比而非像素数。<code>percentPosition: true</code>可以使宽度为百分比的组件不改变他们原本的位置。</p> <pre><code>// set positions with percent values
+percentPosition: true,
+columnWidth: '.grid-sizer',
+itemSelector: '.grid-item'
+
+/* fluid 5 columns */
+.grid-sizer,
+.grid-item { width: 20%; }
+</code></pre> <p><strong>Stamp</strong><br>
+指定组件为<code>stamp</code>。Masonry在布局时会避开这些组件。<br>
+配置项stamp只在Masonry实例第一次初始化完成后黏贴指定组件，但你可以通过<code>stamp method</code>更改后续的stamp布局。</p> <pre><code>&lt;div class=&quot;grid&quot;&gt;
+  &lt;div class=&quot;stamp stamp1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;stamp stamp2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  ....
+&lt;/div&gt;
+
+// specify itemSelector so stamps do get laid out
+itemSelector: '.grid-item',
+// stamp elements
+stamp: '.stamp'
+
+/* position stamp elements with CSS */
+.stamp {
+  position: absolute;
+  background: orange;
+  border: 4px dotted black;
+}
+.stamp1 {
+  left: 30%;
+  top: 10px;
+  width: 20%;
+  height: 100px;
+}
+.stamp2 {
+  right: 10%;
+  top: 20px;
+  width: 70%;
+  height: 30px;
+}
+</code></pre> <p><strong>fitWidth</strong></p> <p>根据父级容器的尺寸，设置容器的宽，以适应可用的列数。启用之后将容器grid居中</p> <pre><code>fitWidth: true
+
+/* center container with CSS */
+.grid {
+  margin: 0 auto;
+}
+</code></pre> <p><strong>originLeft</strong><br>
+控制水平布局，默认状态下<code>originLeft: true</code>控件从左到右布局，设置<code>originLeft: false</code>后，控件从右向左布局。<br> <code>originLeft</code>Masonry v3使用<code>isOriginLeft</code>，在Masonry v4之后<code>isOriginLeft</code>也是被兼容的。</p> <pre><code>originLeft: false
+</code></pre> <p><strong>originTop</strong><br>
+类似originLeft，开启<code>originTop: false</code>后，自下而上布局</p> <h3 id="设置（setup）"><a href="#设置（setup）" aria-hidden="true" class="header-anchor">#</a> 设置（Setup）</h3> <p><strong>containerStyle</strong><br>
+设置父级容器grid的css样式。默认状态下为position:’relative’，禁用grid容器的所有样式：containerStyle:null</p> <pre><code>// default
+// containerStyle: { position: 'relative' }
+
+// disable any styles being set on container
+// useful if using absolute position on container
+containerStyle: null
+</code></pre> <p><strong>transitionDuration</strong><br>
+控件改变位置或重排的缓动时间。默认为0.4s</p> <pre><code>// fast transitions
+transitionDuration: '0.2s'
+
+// slow transitions
+transitionDuration: '0.8s'
+
+// no transitions
+transitionDuration: 0
+</code></pre> <p><strong>stagger</strong><br>
+控件重排的时间。当一个控件改变了位置，其他控件逐次的改变位置进行重排，stagger属性即为每个控件发生重排的缓动时间。，默认为值30（毫秒）</p> <pre><code>stagger: 30
+</code></pre> <p><strong>resize</strong><br>
+当窗口大小改变时控件重排以适应父级容器大小。默认为允许重排<code>resize: true</code>，在v3版本中使用<code>isResizeBound</code>，并在v4版本下兼容。</p> <pre><code>// disable window resize behavior
+resize: false
+
+
+/* grid has fixed width */
+.grid {
+  width: 320px;
+}
+</code></pre> <p><strong>initLayout</strong><br>
+允许初始化布局，默认开启。<br>
+设置为<code>initLayout: false</code>，可以禁止初始化布局，你可以通过methods或者增加event事件的方法开启布局。V3版本使用<code>isInitLayout</code>。</p> <pre><code>var $grid = $('.grid').masonry({
+  // disable initial layout
+  initLayout: false,
+  //...
+});
+// bind event
+$grid.masonry( 'on', 'layoutComplete', function() {
+  console.log('layout is complete');
+});
+// trigger initial layout
+$grid.masonry();
+</code></pre> <h2 id="方法（methods）"><a href="#方法（methods）" aria-hidden="true" class="header-anchor">#</a> 方法（Methods）</h2> <p>Methods是Masonry实例的行为<br>
+使用jQuery时，methods遵从jQuery格式<code>.masonry( 'methodName' /* arguments */ )</code></p> <pre><code>$grid.masonry()
+  .append( elem )
+  .masonry( 'appended', elem )
+  // layout
+  .masonry();
+</code></pre> <p>原生JS的method使用类似：<code>masonry.methodName( /* arguments */ )</code>，与jQuery不同，原生JS不能使用链（chaining）.</p> <pre><code>// vanilla JS
+var msnry = new Masonry( '.grid', {...});
+gridElement.appendChild( elem );
+msnry.appended( elem );
+msnry.layout();
+</code></pre> <h3 id="布局（layout）"><a href="#布局（layout）" aria-hidden="true" class="header-anchor">#</a> 布局（Layout）</h3> <p><strong>layout / .masonry()</strong><br>
+将所有组件布局。<code>layout</code>用于当一个组件改变了尺寸后所有的控件需要重新布局。</p> <pre><code>// jQuery
+$grid.masonry()
+// vanilla JS
+msnry.layout()
+
+var $grid = $('.grid').masonry({
+  columnWidth: 80
+});
+// change size of item by toggling gigante class
+$grid.on( 'click', '.grid-item', function() {
+  $(this).toggleClass('gigante');
+  // trigger layout after item size changes
+  $grid.masonry('layout');
+});
+</code></pre> <p><strong>layoutItems</strong><br>
+布局指定控件</p> <pre><code>// jQuery
+$grid.masonry( 'layoutItems', items, isStill )
+// vanilla JS
+msnry.layoutItems( items, isStill )
+</code></pre> <p><code>items Masonry</code>控件的数组<br> <code>isStill</code>布尔型，禁止变换<br> <strong>stamp</strong><br>
+在排列中黏贴指定控件，Masonry会围绕被黏贴的元素进行排列</p> <pre><code>// jQuery
+$grid.masonry( 'stamp', elements )
+// vanilla JS
+msnry.stamp( elements )
+</code></pre> <p><code>elements</code> element,jQuery对象，节点，或数组<br>
+设置不参与瀑布流布局的对象，以选择器形式给出。</p> <pre><code>var $grid = $('.grid').masonry({
+  // specify itemSelector so stamps do get laid out
+  itemSelector: '.grid-item',
+  columnWidth: 80
+});
+var $stamp = $grid.find('.stamp');
+var isStamped = false;
+
+$('.stamp-button').on( 'click', function() {
+  // stamp or unstamp element
+  if ( isStamped ) {
+    $grid.masonry( 'unstamp', $stamp );
+  } else {
+    $grid.masonry( 'stamp', $stamp );
+  }
+  // trigger layout
+  $grid.masonry('layout');
+  // set flag
+  isStamped = !isStamped;
+});
+</code></pre> <p><strong>unstamp</strong><br>
+解除指定元素的stamp 状态。</p> <h3 id="增加-移除控件"><a href="#增加-移除控件" aria-hidden="true" class="header-anchor">#</a> 增加&amp;移除控件</h3> <p><strong>Appended</strong><br>
+在瀑布流末尾增加新控件并重排。</p> <pre><code>// jQuery
+$grid.masonry( 'appended', elements )
+// vanilla JS
+msnry.appended( elements )
+</code></pre> <p><code>elements element</code>,jQuery对象，节点，或数组</p> <pre><code>$('.append-button').on( 'click', function() {
+  // create new item elements
+  var $items = $('&lt;div class=&quot;grid-item&quot;&gt;...&lt;/div&gt;');
+  // append items to grid
+  $grid.append( $items )
+    // add and lay out newly appended items
+    .masonry( 'appended', $items );
+});
+</code></pre> <p>*（注意链chaining的使用，此处为先增加节点，再讲节点重排）<br>
+jQuery可以使用，增加字符串结构的HTML节点，但是masonry不行，所以当时用jQuery ajax动态加载节点时要将HTML节点转化成jQuery对象。</p> <pre><code>// does not work
+$.get( 'page2', function( content ) {
+  // HTML string added, but items not added to Masonry
+  $grid.append( content ).masonry( 'appended', content );
+});
+
+// does work
+$.get( 'page2', function( content ) {
+  // wrap content in jQuery object
+  var $content = $( content );
+  // add jQuery object
+  $grid.append( $content ).masonry( 'appended', $content );
+});
+</code></pre> <p><strong>prepended</strong><br>
+类似append，在顶部增加新节点并重排。<br> <strong>addItems</strong><br>
+项Masonry实例中增加控件元素，addItems不能像append和prepended重排新增加的元素</p> <pre><code>// jQuery
+$grid.masonry( 'addItems', elements )
+// vanilla JS
+msnry.addItems( elements )
+</code></pre> <p><strong>remove</strong><br>
+从Masonry实例和DOM中移除元素</p> <pre><code>// jQuery
+$grid.masonry( 'remove', elements )
+// vanilla JS
+msnry.remove( elements )
+
+$grid.on( 'click', '.grid-item', function() {
+  // remove clicked element
+  $grid.masonry( 'remove', this )
+    // layout remaining item elements
+    .masonry('layout');
+});
+</code></pre> <h3 id="事件（events）"><a href="#事件（events）" aria-hidden="true" class="header-anchor">#</a> 事件（Events）</h3> <p><strong>on</strong><br>
+增加一个Masonry事件监听。</p> <pre><code>// jQuery
+var msnry = $grid.masonry( 'on', eventName, listener )
+// vanilla JS
+msnry.on( eventName, listener )
+</code></pre> <p><code>eventName</code> 字符串，Masonry事件名称<br> <code>listener</code> 方法<br> <strong>off</strong><br>
+移除Masonry事件</p> <pre><code>// jQuery
+var msnry = $grid.masonry( 'off', eventName, listener )
+// vanilla JS
+msnry.off( eventName, listener )
+</code></pre> <p><code>eventName</code> 字符串，Masonry事件名称<br> <code>listener</code> 方法<br> <strong>once</strong><br>
+增加一个Masonry事件，只触发一次。</p> <pre><code>// jQuery
+var msnry = $grid.masonry( 'once', eventName, listener )
+// vanilla JS
+msnry.once( eventName, listener )
+</code></pre> <p><code>eventName</code> 字符串，Masonry事件名称<br> <code>listener</code> 方法</p> <pre><code>$grid.masonry( 'once', 'layoutComplete', function() {
+  console.log('layout is complete, just once');
+})
+</code></pre> <h3 id="utilities"><a href="#utilities" aria-hidden="true" class="header-anchor">#</a> Utilities</h3> <p><strong>reloadItems</strong><br>
+Recollects all item elements.<br>
+For frameworks like Angular and React, reloadItems may be useful to apply changes to the DOM to Masonry.</p> <pre><code>// jQuery
+$grid.masonry('reloadItems')
+// vanilla JS
+msnry.reloadItems()
+</code></pre> <p><strong>destroy</strong><br>
+移除所有的Masonry功能，<code>destroy</code>将恢复元素预加载之前的状态。</p> <pre><code>// jQuery
+$grid.masonry('destroy')
+// vanilla JS
+msnry.destroy()
+
+var masonryOptions = {
+  itemSelector: '.grid-item',
+  columnWidth: 80
+};
+// initialize Masonry
+var $grid = $('.grid').masonry( masonryOptions );
+var isActive = true;
+
+$('.toggle-button').on( 'click', function() {
+  if ( isActive ) {
+    $grid.masonry('destroy'); // destroy
+  } else {
+    $grid.masonry( masonryOptions ); // re-initialize
+  }
+  // set flag
+  isActive = !isActive;
+});
+</code></pre> <p><strong>getItemElements</strong><br>
+返回一个组件元素的数组</p> <pre><code>// jQuery
+var elems = $grid.masonry('getItemElements')
+// vanilla JS
+var elems = msnry.getItemElements()
+</code></pre> <p><code>elems</code> 数组<br> <strong>jQuery.fn.data('masonry')</strong><br>
+从jQuery对象中取出Masonry实例，以便读取Masonry的属性。</p> <pre><code>var msnry = $('.grid').data('masonry')
+// access Masonry properties
+console.log( msnry.items.length + ' filtered items'  )
+</code></pre> <p><strong>Masonry.data</strong><br>
+通过元素取出Masonry实例，<code>Masonry.data()</code>用于从HTML初始化的Masonry实例中取出Masonry属性。</p> <pre><code>var msnry = Masonry.data( element )
+</code></pre> <p><code>element</code> 控件或选择器的字符串<br> <code>msnry</code> Masonry</p> <pre><code>&lt;!-- init Masonry in HTML --&gt;
+&lt;div class=&quot;grid&quot; data-masonry='{...}'&gt;...&lt;/div&gt;
+
+// jQuery
+// pass in the element, $element[0], not the jQuery object
+var msnry = Masonry.data( $('.grid')[0] )
+
+// vanilla JS
+// using an element
+var grid = document.querySelector('.grid')
+var msnry = Masonry.data( grid )
+// using a selector string
+var msnry = Masonry.data('.grid')
+</code></pre> <h2 id="事件"><a href="#事件" aria-hidden="true" class="header-anchor">#</a> 事件</h2> <h3 id="事件绑定（event-binding）"><a href="#事件绑定（event-binding）" aria-hidden="true" class="header-anchor">#</a> 事件绑定（event binding）</h3> <p><strong>jQuery事件绑定</strong><br>
+使用jQuery标准的事件方法绑定，如<code>.on()</code>，<code>.off()</code>和<code>.one()</code>。</p> <pre><code>// jQuery
+var $grid = $('.grid').masonry({...});
+
+function onLayout() {
+  console.log('layout done');
+}
+// bind event listener
+$grid.on( 'layoutComplete', onLayout );
+// un-bind event listener
+$grid.off( 'layoutComplete', onLayout );
+// bind event listener to be triggered just once. note ONE not ON
+$grid.one( 'layoutComplete', function() {
+  console.log('layout done, just this one time');
+});
+</code></pre> <p>jQuery事件监听器需要一个<code>event</code>argument参数，原生的JS不需要。</p> <pre><code>// jQuery, has event argument
+$grid.on( 'layoutComplete', function( event, items ) {
+  console.log( items.length );
+});
+
+// vanilla JS, no event argument
+msnry.on( 'layoutComplete', function( items ) {
+  console.log( items.length );
+});
+</code></pre> <p><strong>原生JS事件绑定</strong><br>
+使用原生JS方法绑定。on()，.off()，.once()。</p> <pre><code>// vanilla JS
+var msnry = new Masonry( '.grid', {...});
+
+function onLayout() {
+  console.log('layout done');
+}
+// bind event listener
+msnry.on( 'layoutComplete', onLayout );
+// un-bind event listener
+msnry.off( 'layoutComplete', onLayout );
+// bind event listener to be triggered just once
+msnry.once( 'layoutComplete', function() {
+  console.log('layout done, just this one time');
+});
+</code></pre> <h3 id="masonry-事件"><a href="#masonry-事件" aria-hidden="true" class="header-anchor">#</a> Masonry 事件</h3> <p><strong>layoutComplete</strong><br>
+在布局和所有位置变化完成后触发。</p> <pre><code>// jQuery
+$grid.on( 'layoutComplete', function( event, laidOutItems ) {...} )
+// vanilla JS
+msnry.on( 'layoutComplete', function( laidOutItems ) {...} )
+</code></pre> <p><code>laidOutItems</code> Masonry控件数组，已完成排列的控件</p> <pre><code>$grid.on( 'layoutComplete',
+  function( event, laidOutItems ) {
+    console.log( 'Masonry layout completed on ' +
+      laidOutItems.length + ' items' );
+  }
+);
+</code></pre> <p><strong>removeComplete</strong><br>
+元素移除后触发</p> <pre><code>// jQuery
+$grid.on( 'removeComplete', function( event, removedItems ) {...} )
+// vanilla JS
+msnry.on( 'removeComplete', function( removedItems ) {...} )
+</code></pre> <p><code>removedItems</code>Masonry控件数组，被移除的控件</p> <pre><code>$grid.on( 'removeComplete',
+  function( event, removedItems ) {
+    notify( 'Removed ' + removedItems.length + ' items' );
+  }
+);
+</code></pre></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/4/2020, 3:43:24 PM</span></div></footer> <div class="right-group"><div class="item"><span class="title">关注作者公众号</span> <span class="desc">共走前端全栈之路</span> <img width="100%" src="/img/wechat.jpg" alt></div><div class="item"><span class="title">小助手</span> <span class="desc">扫二维码，回复’前端客栈‘进群学习</span> <img width="100%" src="/img/wechat-assistant.png" alt></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-inn/blog/blog-6.html" class="prev">在Nuxt中动态加载vuex模块的踩雷日志</a></span> <span class="next"><a href="/web-inn/blog/blog-1.html">vue 插件总结</a>→
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/web-inn/assets/js/app.c8204003.js" defer></script><script src="/web-inn/assets/js/3.b3decb7d.js" defer></script><script src="/web-inn/assets/js/1.b7f29f9d.js" defer></script><script src="/web-inn/assets/js/22.58360267.js" defer></script>
+  </body>
+</html>
