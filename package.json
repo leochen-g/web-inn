@@ -4,11 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
+    "docs:dev": "vuepress dev docs --temp .temp",
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.2.0",
     "vuepress": "^1.0.3"
+  },
+  "dependencies": {
+    "mavon-editor": "^2.9.1"
   }
 }
