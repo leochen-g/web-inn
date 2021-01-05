@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import Vue from 'Vue'
 export default {
   name: 'MarkdownOnline',
   data() {
@@ -47,11 +46,6 @@ export default {
         preview: true, // 预览
       },
     };
-  },
-  mounted() {
-    import('mavon-editor').then(function (m) {
-      Vue.use(m.default);
-    });
   },
 };
 </script>
