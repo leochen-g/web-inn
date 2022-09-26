@@ -44,6 +44,7 @@
       class="footer"
       v-if="data.footer"
     >
+      <a style="color: #4e6e8e;display: inline-block" href="https://beian.miit.gov.cn" target="_blank">皖ICP备16024828号-2</a>
       {{ data.footer }}
     </div>
   </main>

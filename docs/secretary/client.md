@@ -1,4 +1,4 @@
-# 智能微秘书客户端介绍
+# 智能微秘书客户端
 
 ---
 sidebar: auto
@@ -6,9 +6,8 @@ sidebar: auto
 
 
 [![ 由Wechaty提供 ](https://img.shields.io/badge/Powered%20By-Wechaty-blue.svg)](https://github.com/chatie/wechaty)
-
-[![node version](https://img.shields.io/badge/node-%3E%3D10-blue.svg)](http://nodejs.cn/download/)
-[![node version](https://img.shields.io/badge/wechaty-%3E%3D0.26-blue.svg)](https://github.com/Chatie/wechaty)
+[![node version](https://img.shields.io/badge/node-%3E%3D12-blue.svg)](http://nodejs.cn/download/)
+[![node version](https://img.shields.io/badge/wechaty-%3E%3D0.63-blue.svg)](https://github.com/Chatie/wechaty)
 ![](https://img.shields.io/badge/Window-green.svg)
 ![](https://img.shields.io/badge/Mac-yellow.svg)
 ![](https://img.shields.io/badge/Centos-blue.svg)
@@ -78,7 +77,7 @@ npm run restart //重启pm2
 ## 常见问题解决方法
 
 ### 常见问题解决基本方案
-* 先检查node版本是否大于10
+* 先检查node版本是否大于12
 * 确认npm已经配置好淘宝源  
 * 存在package-lock.json文件先删除
 * 删除`node_modules`后重新执行`npm install` 或`cnpm install`
@@ -138,6 +137,15 @@ yum install ipa-gothic-fonts xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11
 ### 4、如图所示问题解决办法，关闭win/mac防火墙；如果公司网络有限制的话也可能引起无法启动问题
 
 ![](http://image.bloggeng.com/WechatIMG7619.png)
+
+### 5、centos下提示无法启动浏览器进程如下图
+
+![](http://image.xkboke.com/aibotk/public/kbap8w56GBZWqjYd_WechatIMG174.png)
+
+解决方案：
+```shell
+sudo yum install nss
+```
 
 ### 5. 更多问题
 关于wechaty的相关接口，请
