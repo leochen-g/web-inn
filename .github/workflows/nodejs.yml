@@ -31,6 +31,6 @@ jobs:
           switches: -avzr --delete
           path: docs/.vuepress/dist/
           remote_path: ${{ secrets.TX_SOURCE }}
-          remote_host: ${{ secrets.TX_HOST }}
+          remote_host: ${{ secrets.HW_HOST }}
           remote_user: ${{ secrets.TX_USER}}
           remote_key: ${{ secrets.TX_PRIVATE_KEY }}

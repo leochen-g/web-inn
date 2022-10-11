@@ -53,6 +53,7 @@ module.exports = {
       { text: 'Markdown在线编辑器', link: '/onlineTool/markdown-online' },
       { text: '微信每日说', link: '/wechatBot/' },
       { text: '智能微秘书', link: '/secretary/' },
+      { text: '图夫爬虫', link: 'http://tufu.xkboke.com/' },
       { text: 'Github', link: 'https://github.com/gengchen528/' },
     ],
     sidebar: {
